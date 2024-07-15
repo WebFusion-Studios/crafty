@@ -79,6 +79,7 @@ function combineElements() {
         const newElement = generateNewElement();
         if (!discoveredElements[newElement]) {
             discoveredElements[newElement] = 1;
+            playUnlockSound();
         } else {
             discoveredElements[newElement] += 1;
         }
@@ -93,7 +94,7 @@ function combineElements() {
 
 // Function to generate a new element
 function generateNewElement() {
-    const newElement = newElementList[Math.floor(Math.random() * newElementList.length)];
+    let newElement = newElementList[Math.floor(Math.random() * newElementList.length)];
     // Ensure uniqueness in discovered elements
     while (discoveredElements[newElement]) {
         newElement = newElementList[Math.floor(Math.random() * newElementList.length)];
@@ -101,8 +102,13 @@ function generateNewElement() {
     return newElement;
 }
 
+// Function to play unlock sound
+function playUnlockSound() {
+    const unlockSound = document.getElementById('unlockSound');
+    unlockSound.play();
+}
+
 // Initial render
 renderInventory();
 renderDiscoveredElements();
 renderCombinerOptions();
-
