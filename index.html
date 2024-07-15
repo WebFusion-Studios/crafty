@@ -15,7 +15,7 @@
             display: flex;
             flex-wrap: wrap;
         }
-        .inventory, .crafting, .combiner {
+        .inventory, .crafting, .combiner, .coins, .gold-inventory {
             padding: 20px;
             background-color: #fff;
             margin: 10px;
@@ -23,7 +23,7 @@
             border-radius: 10px;
             width: 300px;
         }
-        .inventory h2, .crafting h2, .combiner h2 {
+        .inventory h2, .crafting h2, .combiner h2, .coins h2, .gold-inventory h2 {
             margin-top: 0;
         }
         .item-list {
@@ -36,7 +36,7 @@
         .item-list button {
             margin-left: 10px;
         }
-        .combine-button {
+        .combine-button, .sell-button, .buy-button {
             margin-top: 10px;
         }
     </style>
@@ -61,6 +61,13 @@
         <div class="crafting">
             <h2>Discovered Elements</h2>
             <ul class="item-list" id="craftingList"></ul>
+        </div>
+        <div class="coins">
+            <h2>Coins: <span id="coinCount">0</span></h2>
+        </div>
+        <div class="gold-inventory">
+            <h2>Gold Inventory</h2>
+            <ul class="item-list" id="goldInventoryList"></ul>
         </div>
     </div>
     <audio id="unlockSound" src="unlock-sound.mp3"></audio>
