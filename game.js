@@ -84,7 +84,11 @@ function renderDiscoveredElements() {
     craftingList.innerHTML = '';
     for (let item in discoveredElements) {
         let li = document.createElement('li');
-        li.textContent = item;
+        li.textContent = `${item} (Price: ${getPrice(item)})`;
+        let buyButton = document.createElement('button');
+        buyButton.textContent = 'Buy Gold';
+        buyButton.onclick = () => buyGoldElement(item);
+        li.appendChild(buyButton);
         craftingList.appendChild(li);
     }
 }
